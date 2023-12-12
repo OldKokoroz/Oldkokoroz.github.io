@@ -222,9 +222,9 @@ html {
 
   background: repeating-linear-gradient(
     to bottom,
-    transparent 0%,
+    transparent 100%,
     rgba(255, 255, 255, 0.05) .5%,
-    transparent 1%
+    transparent 100%
   );
 
   animation: fudge 7s ease-in-out alternate infinite;
