@@ -141,24 +141,6 @@ html {
    -webkit-font-smoothing: antialiased;
 }
 
-body {
-   background: #fff;
-   font-family: 'opensans-regular', sans-serif;
-   font-weight: normal;
-   font-size: 15px;
-   line-height: 30px;
-	color: #838C95;
-
-   -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
-}
-
-body {
-  background: black;
-  font-family: "Oswald", sans-serif;
-  font-style: italic;
-}
-
 .container {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -171,7 +153,7 @@ body {
   position: relative;
   font-size: 9vw;
   // margin: 70px 200px;
-  animation: glitch 5s 5s infinite;
+  animation: glitch 2s 2s infinite;
 }
 
 .glitch::before {
@@ -179,10 +161,9 @@ body {
   position: absolute;
   left: -2px;
   text-shadow: -5px 0 magenta;
-  background: black;
   overflow: hidden;
   top: 0;
-  animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  animation: noise-1 3s linear infinite alternate-reverse, glitch 2s 2.02s infinite;
 }
 
 .glitch::after {
@@ -190,10 +171,9 @@ body {
   position: absolute;
   left: 2px;
   text-shadow: -5px 0 lightgreen;
-  background: black;
   overflow: hidden;
   top: 0;
-  animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
+  animation: noise-2 3s linear infinite alternate-reverse, glitch 2s 2s infinite;
 }
 
 @keyframes glitch {
