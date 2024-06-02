@@ -79,20 +79,26 @@
             <label for="password">Signum:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Intrare</button>
+            <button type="submit" onclick="redirectToMedia()">Intrare</button>
         </form>
     </div>
-    <script>
-        function toggleForm() {
-            var loginForm = document.getElementById('loginForm');
-            var switchText = document.querySelector('.switch p');
-
-            (loginForm.getAttribute('id') === 'loginForm') {
-              loginForm.setAttribute('id', 'signupForm');
-              loginForm.getElementsByTagName('h2')[0].innerText = 'Sign up';
-              switchText.innerHTML = 'Already have an account? <a href="#" onclick="toggleForm()">Login</a>';
-            }
-        }
-    </script>
 </body>
+<script>
+    function redirectToMedia() {
+      // Get the username and password entered by the user
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Check if username and password are valid (you can add your validation logic here)
+      var isValid = true; // Example validation; replace this with your actual validation logic
+
+      if (isValid) {
+        // Redirect to media.crudelitas.com after successful login
+        window.location.href = "http://media.crudelitas.com";
+      } else {
+        // If login fails, display an error message (you can customize this part)
+        alert("Invalid credentials. Please try again.");
+      }
+    }
+</script>
 </html>
