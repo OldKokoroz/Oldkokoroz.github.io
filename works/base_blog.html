@@ -2,121 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Article - My Dark Blog</title>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
     <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #1e1e1e;
-            color: #00ff00;
+        /* Reset some default styles */
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure full height of viewport */
+        }
+
+        /* Header styling */
+        header {
+            background-color: #222;
+            padding: 10px 0;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        header:hover {
+            background-color: #444; /* Darken header on hover */
+        }
+
+        header .container {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        #content {
-            width: calc(70% - 20px);
-            /* Subtract 20px to account for padding */
-            display: flex;
-            flex-wrap: wrap;
+        header h1 {
+            font-size: 24px;
         }
 
-        .blog-post {
-            width: 100%;
-            margin: 20px 0;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
-            text-align: left;
+        header nav ul {
+            list-style-type: none;
         }
 
-        .blog-post img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
+        header nav ul li {
+            display: inline;
+            margin-right: 15px;
         }
 
-        .blog-post h2 {
-            color: #00ff00;
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
-
-        .blog-post p {
-            line-height: 1.6;
-            color: #ccc;
-        }
-
-        #toc {
-            width: calc(30% - 20px);
-            /* Subtract 20px to account for padding */
-            position: sticky;
-            top: 20px;
-            background-color: rgba(51, 51, 51, 0); /* Full transparency */
-            padding: 10px;
-            border-left: 1px solid #555;
-            overflow-y: auto;
-            max-height: calc(100vh - 40px);
-        }
-
-        #toc h3 {
-            color: #fff;
-        }
-
-        #toc ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        #toc a {
+        header nav ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
-        #toc a:hover {
-            color: #00ff00;
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content area */
+        main {
+            flex: 1; /* Take remaining vertical space */
+            padding: 20px; /* Increased padding for readability */
+        }
+
+        main .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        main .post {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        main .post h2 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        main .post .meta {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        main .post p {
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        main .post a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        main .post a:hover {
+            text-decoration: underline;
+        }
+
+        main .post:last-child {
+            margin-bottom: 0; /* Remove bottom margin from the last article */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Push to the bottom */
+            width: 100%;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        .footer-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links iconify-icon {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+
+        .social-links iconify-icon:hover {
+            color: #007bff; /* Change color to blue on hover */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header h1 {
+                margin-bottom: 10px;
+            }
+
+            header nav ul {
+                margin-top: 10px;
+            }
+
+            main .post {
+                padding: 20px;
+            }
+
+            footer .footer-container {
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div id="content">
-        <div class="blog-post" id="post1">
-            <img src="" alt="">
-            <h1 align="center"></h1>
-            <p>
-                <h3 id=""></h3><br>
+<header>
+    <div class="container">
+        <h1>My Dark Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">About</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="/index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-                <h3 id=""></h3><br>
-            </p>
+<main>
+    <div class="container">
+        <article class="post">
+            <h2>Article Title</h2>
+            <p class="meta">Published on June 18, 2023</p>
+        </article>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/muhammed-mustafa-kara/"><iconify-icon icon="line-md:linkedin"></iconify-icon></a>
+            <a href="https://github.com/deuskarao"><iconify-icon icon="line-md:github-loop"></iconify-icon></a>
+            <a href="https://tryhackme.com/p/DeusKarao"><iconify-icon icon="simple-icons:tryhackme"></iconify-icon></a>
+            <a href="https://www.instagram.com/deus_karao/"><iconify-icon icon="line-md:instagram"></iconify-icon></a>
+            <!-- Add more social links/icons as needed -->
         </div>
+        <p>&copy; DeusKarao &copy; Copyright 2023</p>
     </div>
-
-    <div id="toc">
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#"></a></li><br>
-            <li><a href="#"></a></li>
-            <!-- Add more links for each blog post -->
-        </ul>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
+</footer>
 
 </body>
 </html>

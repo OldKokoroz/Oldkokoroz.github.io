@@ -3,85 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opus et Salvare</title>
-    <style>
-        body {
-            font-family: 'Ubuntu Mono', monospace;
-            background-color: #1e1e1e;
-            color: #00ff00;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+    <title>My Dark Blog</title>
+    
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
-        h1 {
-            color: #00ff00;
-            text-align: center;
-        }
+<style>
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        .grid-container {
-            display: grid;
-            grid-template-rows: repeat(2, auto); /* Set the number of rows */
-            grid-auto-flow: column; /* Set the flow direction to column */
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
+    /* Basic styling for the body */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        background-color: #1a1a1a;
+        color: #fff;
+        margin: 0;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure full height of viewport */
+    }
 
-        .document {
-            border: 1px solid #00ff00;
-            padding: 10px;
-            background-color: #2c3e50;
-            box-shadow: 0 0 10px rgba(52, 152, 219, 0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
-            text-decoration: none;
-            color: #ecf0f1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    /* Header styling */
+    header {
+        background-color: #222;
+        padding: 10px 0;
+        transition: background-color 0.3s ease; /* Smooth transition */
+    }
 
-        .document img {
-            max-width: 100%;
-            max-height: 100px; /* Set a maximum height for the images */
-            margin-bottom: 10px;
-        }
+    header:hover {
+        background-color: #444; /* Darken header on hover */
+    }
 
-        .document:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav ul {
+        list-style-type: none;
+    }
+
+    header nav ul li {
+        display: inline;
+        margin-right: 15px;
+    }
+
+    header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    header nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main content area */
+    main {
+        flex: 1; /* Take remaining vertical space */
+        padding: 60px;
+    }
+
+    main .post {
+        background-color: #333;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease; /* Smooth transition */
+        max-width: 1100px;
+        /*margin: 1 auto; /* Center align */
+    }
+
+    main .post:hover {
+        transform: translateY(-5px); /* Lift article on hover */
+    }
+
+    main .post h2 {
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    main .post .meta {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    main .post p {
+        line-height: 1.8;
+        color: #ccc;
+    }
+
+    main .post a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    main .post a:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer styling */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: auto; /* Push to the bottom */
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .footer-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-links iconify-icon {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #fff;
+        transition: color 0.3s ease; /* Smooth transition for color change */
+    }
+
+    .social-links iconify-icon:hover {
+        color: #007bff; /* Change color to blue on hover */
+    }
+
+</style>
 </head>
 <body>
 
-    <h1>My Works</h1>
-
-    <div class="grid-container">
-        <a href="helloworld.html" class="document">
-            <img src="hello-world.JPG" alt="">
-            $ Hello World
-
-        <a href="Flaskweb.html" class="document">
-            <img src="flask-pic.png" alt="">
-            $ Flask Web
-        </a>
-
-        <a href="SocialEngineering.html" class="document">
-            <img src="SocEng.jpg" alt="">
-            $ Social Engineering
-        </a>
-
-        <a href="WifiHacking.html" class="document">
-            <img src="wifi-pic.png" alt="">
-            $ Wireless Hacking
-        </a>
-            
+<header>
+    <div class="container">
+        <h1>My Dark Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/index.html">About</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="/index.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
 
+<main>
+    <div class="container">
+        <article class="post">
+            <h2>Hello World</h2>
+            <p class="meta">Published on June 18, 2024 by John Doe</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et turpis lacinia, a auctor felis aliquam. Proin nec sem eget elit ultricies interdum vel eu orci.</p>
+            <a href="helloworld.html">Read more...</a>
+        </article>
+
+        <article class="post">
+            <h2>Post Title Two</h2>
+            <p class="meta">Published on June 17, 2024 by Jane Smith</p>
+            <p>Curabitur dapibus magna eget mauris euismod, sit amet posuere purus blandit. Vivamus molestie mauris a risus laoreet, at sollicitudin ligula fringilla.</p>
+            <a href="#">Read more...</a>
+        </article>
+
+        <!-- Add more articles as needed -->
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/muhammed-mustafa-kara/"><iconify-icon icon="line-md:linkedin"></iconify-icon></a>
+            <a href="https://github.com/deuskarao"><iconify-icon icon="line-md:github-loop"></iconify-icon></a>
+            <a href="https://tryhackme.com/p/DeusKarao"><iconify-icon icon="simple-icons:tryhackme"></iconify-icon></a>
+            <a href="https://www.instagram.com/deus_karao/"><iconify-icon icon="line-md:instagram"></iconify-icon></a>
+            <!-- Add more social links/icons as needed -->
+        </div>
+        <p>&copy; DeusKarao &copy; Copyright 2023</p>
+    </div>
+</footer>
 </body>
 </html>
